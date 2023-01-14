@@ -13,6 +13,8 @@ const portfinder = require('portfinder')
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
 
+require('./mock.config').config({ isDev: true })
+
 const devWebpackConfig = merge(baseWebpackConfig, {
   module: {
     rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap, usePostCSS: true })
@@ -22,6 +24,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
 
   // these devServer options should be customized in /config/index.js
   devServer: {
+    https: true,  //开启https
     clientLogLevel: 'warning',
     historyApiFallback: {
       rewrites: [
@@ -82,7 +85,7 @@ module.exports = new Promise((resolve, reject) => {
       // Add FriendlyErrorsPlugin
       devWebpackConfig.plugins.push(new FriendlyErrorsPlugin({
         compilationSuccessInfo: {
-          messages: [`Your application is running here: http://${devWebpackConfig.devServer.host}:${port}`],
+          messages: [`这里为了跨域请求带上cookie，保证登录有效，在本地开发测试时需要开启 https   直接在浏览器打开 https://${devWebpackConfig.devServer.host}:${port} \n    注意：页面会展示警告，不用管它，直接在当前页面用键盘输入 thisisunsafe ，不是在地址栏输入，就直接敲键盘就行了，页面即会自动刷新进入网页\n `],
         },
         onErrors: config.dev.notifyOnErrors
         ? utils.createNotifierCallback()
