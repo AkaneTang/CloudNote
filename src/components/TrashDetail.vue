@@ -10,7 +10,7 @@ import Auth from '@/apis/auth'
 export default {
   data () {
     return {
-      msg: '回收站笔记详情页'
+      msg: '回收站详情页'
     }
   },
   created() {

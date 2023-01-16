@@ -1,0 +1,93 @@
+#notebook-list {
+    flex: 1;
+
+    .btn {
+        margin-left: 20px;
+
+        .iconfont {
+            font-size: 12px;
+        }
+
+        // 这个没用到
+        input {
+            width: 300px;
+            height: 30px;
+            line-height: 30px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            padding: 3px 5px;
+            outline: none;
+        }
+
+        header {
+            padding: 12px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        main {
+            padding: 30px 40px;
+            height: calc(100vh - 46px);
+            overflow: scroll;
+            // overflow-y: scroll;  滚动栏丑
+        }
+
+        .layout {
+            max-width: 966px;
+            margin: 0 auto;
+        }
+
+        main {
+            h3 {
+                font-size: 12px;
+                color: #000;
+            }
+
+            .book-list {
+                margin-top: 10px;
+                color: #ccc;
+                background-color: #fff;
+                border-radius: 4px;
+                font-weight: bold;
+
+                span {
+                    font-size: 12px;
+                    color: #b3c0c8;
+
+                }
+            }
+
+            .date,
+            .action {
+                float: right;
+                margin-left: 10px;
+            }
+
+            // 这是哪里的？
+            .iconfont {
+                color: #1687ea;
+                margin-right: 4px;
+            }
+
+            .notebook {
+                display: block;
+                cursor: pointer;
+
+                // 鼠标移动上去显示浅蓝色
+                &:hover {
+                    background-color: #f7fafd;
+                }
+
+                div {
+                    border-bottom: 1px solid #ebebeb;
+                    padding: 12px 14px;
+                }
+
+                // 这个没用到
+                .error-msg {
+                    font-size: 12px;
+                    color: red;
+                }
+            }
+        }
+    }
+}

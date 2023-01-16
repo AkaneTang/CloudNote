@@ -107,7 +107,6 @@ export default {
         return
       }
 
-
       console.log(`start login..., username: ${this.login.username} , password: ${this.login.password}`)
       Auth.login({
         username: this.login.username,
@@ -118,7 +117,7 @@ export default {
         Bus.$emit('userInfo', { username: this.login.username })
         this.$router.push({ path: 'notebooks' })
       }).catch(data => {
-        this.login.isError = false
+            this.login.isError = true
         this.login.notice = data.msg
       })
     }
