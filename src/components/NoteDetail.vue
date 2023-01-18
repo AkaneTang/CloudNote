@@ -1,6 +1,7 @@
 <template>
   <div id="note-detail">
-    <h1>{{msg}} : {{ $route.params.noteId }}</h1>
+    <h1>notebookId: {{ $route.query.notebookId }}</h1>
+    <h1>noteId: {{ $route.query.noteId }}</h1>
   </div>
 </template>
 
@@ -10,7 +11,7 @@ import Auth from '@/apis/auth'
 export default {
   data () {
     return {
-      msg: '笔记详情页'
+      msg: '笔记详情列表'
     }
   },
   created() {

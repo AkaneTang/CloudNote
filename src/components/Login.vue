@@ -32,14 +32,8 @@
 
 <script>
 
-import Auth from '@/apis/auth.js'
-import Bus from '@/helpers/bus.js'
-
-// request('/auth')
-//   .then(data => {
-//     console.log(data)
-//   })
-
+import Auth from '@/apis/auth'
+import Bus from '@/helpers/bus'
 
 export default {
   data() {

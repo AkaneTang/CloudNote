@@ -24,16 +24,12 @@ export default new Router({
       component: Notebooks
     },
     {
-      path: '/note/:noteId',
+      path: '/note',
       component: NoteDetail
     },
     {
-      path: '/trash/:noteId',
+      path: '/trash',
       component: TrashDetail
-    },
-    // {
-    //   path: '/auth',
-    //   component: Login
-    // }
+    }
   ]
 })
